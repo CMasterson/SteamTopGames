@@ -50,9 +50,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="192.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-p3-sKe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                                    <color key="backgroundColor" red="0.1414359808" green="0.22497826809999999" blue="0.3453657329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-LY-pBB">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="193"/>
-                                                    <color key="backgroundColor" red="0.1414359808" green="0.22497826809999999" blue="0.3453657329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAYERS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7y-ND-pd7">
                                                     <rect key="frame" x="312" y="177.33333333333334" width="94" height="13"/>
@@ -82,13 +85,18 @@
                                                 <constraint firstAttribute="trailing" secondItem="jAu-LY-pBB" secondAttribute="trailing" id="BFP-Nj-mho"/>
                                                 <constraint firstItem="jAu-LY-pBB" firstAttribute="top" secondItem="jP3-WK-FPQ" secondAttribute="top" id="NiV-08-57k"/>
                                                 <constraint firstAttribute="bottom" secondItem="jAu-LY-pBB" secondAttribute="bottom" id="PwU-lh-2sy"/>
+                                                <constraint firstItem="G7y-ND-pd7" firstAttribute="top" secondItem="hNW-p3-sKe" secondAttribute="bottom" constant="-12.666666666666657" id="RCc-Jg-5up"/>
                                                 <constraint firstAttribute="bottom" secondItem="G7y-ND-pd7" secondAttribute="bottom" constant="2.5" id="SAV-hO-wCe"/>
                                                 <constraint firstAttribute="trailing" secondItem="G7y-ND-pd7" secondAttribute="trailing" constant="8" id="Yey-zv-kOC"/>
                                                 <constraint firstItem="jAu-LY-pBB" firstAttribute="leading" secondItem="jP3-WK-FPQ" secondAttribute="leading" id="el9-Sw-y7B"/>
+                                                <constraint firstItem="hNW-p3-sKe" firstAttribute="leading" secondItem="jP3-WK-FPQ" secondAttribute="leadingMargin" constant="-8" id="iCE-mG-wnw"/>
+                                                <constraint firstItem="hNW-p3-sKe" firstAttribute="top" secondItem="jP3-WK-FPQ" secondAttribute="topMargin" constant="-8" id="ibk-D8-hh8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hNW-p3-sKe" secondAttribute="trailing" constant="-8" id="vlB-bf-Fol"/>
                                                 <constraint firstItem="G7y-ND-pd7" firstAttribute="top" secondItem="caH-93-e2p" secondAttribute="bottom" id="ylP-7x-j0N"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="appBackgroundImageView" destination="hNW-p3-sKe" id="n2D-ZO-Iof"/>
                                             <outlet property="appHeaderImageView" destination="jAu-LY-pBB" id="hbE-4z-Bem"/>
                                             <outlet property="appPlayerNumberLabel" destination="caH-93-e2p" id="bFR-pZ-fBv"/>
                                             <segue destination="Poo-PW-liq" kind="showDetail" action="showViewController:sender:" id="gso-m4-hMd"/>

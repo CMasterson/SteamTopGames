@@ -74,6 +74,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
         
         cell?.appPlayerNumberLabel.text = data.appNumberOfPlayers?.description
         cell?.appHeaderImageView.sd_setImage(with: data.appImageURL, placeholderImage:#imageLiteral(resourceName: "SteamLogo"))
+        cell?.appBackgroundImageView.sd_setImage(with: data.appBackgroundImageURL)
     
         
         return cell!

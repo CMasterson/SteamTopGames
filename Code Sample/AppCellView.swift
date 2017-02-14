@@ -9,9 +9,7 @@
 import UIKit
 
 class AppCellView: UITableViewCell {
-    
-    @IBOutlet weak var appNameLabel: UILabel!
-    @IBOutlet weak var appDeveloperLabel: UILabel!
     @IBOutlet weak var appPlayerNumberLabel: UILabel!
     @IBOutlet weak var appHeaderImageView: UIImageView!
+    @IBOutlet weak var appBackgroundImageView: UIImageView!
 }
