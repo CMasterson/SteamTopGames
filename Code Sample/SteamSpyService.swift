@@ -16,13 +16,18 @@ class SteamSpyService
         let urlString = "https://steamspy.com/api.php?request=top100in2weeks"
         var steamAppArray = Array<AppDataModel>()
         
-        let url = URL(string: urlString)
-        URLSession.shared.dataTask(with:url!) { (data, response, error) in
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with:url) { (data, response, error) in
             if error != nil {
                 print(error as Any)
             } else {
                 do {
-                    let parsedData = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
+                    guard let parsedData = try JSONSerialization.jsonObject(with: data!, options: []) as? [String:Any] else {
+                        return
+                    }
                     
                     for appID in parsedData.keys
                     {

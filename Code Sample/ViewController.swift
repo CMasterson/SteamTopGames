@@ -64,20 +64,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "appCell") as? AppCellView
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "appCell") as? AppCellView {
         
-        if cell == nil {
-            cell = AppCellView()
+            let data = appData[indexPath.row]
+            
+            cell.appPlayerNumberLabel.text = data.appNumberOfPlayers?.description
+            cell.appHeaderImageView.sd_setImage(with: data.appImageURL, placeholderImage:#imageLiteral(resourceName: "SteamLogo"))
+            cell.appBackgroundImageView.sd_setImage(with: data.appBackgroundImageURL)
+        
+            
+            return cell
         }
         
-        let data = appData[indexPath.row]
-        
-        cell?.appPlayerNumberLabel.text = data.appNumberOfPlayers?.description
-        cell?.appHeaderImageView.sd_setImage(with: data.appImageURL, placeholderImage:#imageLiteral(resourceName: "SteamLogo"))
-        cell?.appBackgroundImageView.sd_setImage(with: data.appBackgroundImageURL)
-    
-        
-        return cell!
+        return AppCellView()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
