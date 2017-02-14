@@ -6,7 +6,7 @@
 //  Copyright © 2017 Conor. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct AppDataModel {
     var appID : String?
@@ -14,13 +14,7 @@ struct AppDataModel {
     var appDeveloperLiteral : String?
     var appPublisherLiteral : String?
     var appNumberOfPlayers : Int?
-    
-    init()
-    {
-        appID = nil
-        appNameLiteral = nil
-        appDeveloperLiteral = nil
-        appPublisherLiteral = nil
-        appNumberOfPlayers = nil
-    }
+    var appPrice : Int?
+    var appImageURL : URL?
+    var appBackgroundImageURL : URL?
 }

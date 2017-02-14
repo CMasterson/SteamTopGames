@@ -18,14 +18,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
         SteamSpyService.getTopApps() { (result: [AppDataModel]) in
             print("AppData recieved")
-            self.appData = result
-            self.populateAppList()
+            
+            DispatchQueue.main.async {
+                self.spinnerView.stopAnimating()
+                self.appData = result
+                self.populateAppList()
+            }
             return
         }
         
+        if let selectedRow = appTableView.indexPathForSelectedRow {
+            appTableView.deselectRow(at: selectedRow, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,15 +43,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let appDetail = segue.destination as? AppDetailView {
+            let selectedIndex = appTableView.indexPathForSelectedRow!.row
+            appDetail.appData = appData[selectedIndex]
+        }
+    }
     
     func populateAppList(){
         appData.sort{ $0.appNumberOfPlayers! > $1.appNumberOfPlayers! }
-        spinnerView.stopAnimating()
         appTableView.reloadData()
     }
 
 
 }
+
+
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource
 {
@@ -55,9 +72,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
         
         let data = appData[indexPath.row]
         
-        cell?.appNameLabel.text = data.appNameLiteral
-        cell?.appDeveloperLabel.text = data.appDeveloperLiteral
         cell?.appPlayerNumberLabel.text = data.appNumberOfPlayers?.description
+        cell?.appHeaderImageView.sd_setImage(with: data.appImageURL, placeholderImage:#imageLiteral(resourceName: "SteamLogo"))
+    
         
         return cell!
     }

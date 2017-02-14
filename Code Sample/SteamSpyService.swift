@@ -6,11 +6,10 @@
 //  Copyright © 2017 Conor. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class SteamSpyService
 {
-    //class func getCurrencyData(_ baseCurrency:String, completion: @escaping (_ result: CurrencyModel) -> Void) {}
     class func getTopApps(completion: @escaping (_ result: [AppDataModel]) -> Void)
     {
         
@@ -39,6 +38,14 @@ class SteamSpyService
                         appDataStruct.appDeveloperLiteral = appDataDict["developer"] as? String
                         appDataStruct.appPublisherLiteral = appDataDict["publisher"] as? String
                         appDataStruct.appNumberOfPlayers = appDataDict["players_2weeks"] as? Int
+
+                        if let priceString = appDataDict["price"] as? String
+                        {
+                            appDataStruct.appPrice = Int(priceString)
+                        }
+                        
+                        appDataStruct.appImageURL = URL(string: "http://cdn.akamai.steamstatic.com/steam/apps/\(appID)/header.jpg")
+                        appDataStruct.appBackgroundImageURL = URL(string: "http://cdn.akamai.steamstatic.com/steam/apps/\(appID)/page_bg_generated_v6b.jpg")
                         
                         steamAppArray.append(appDataStruct)
                         
@@ -54,5 +61,4 @@ class SteamSpyService
             }.resume()
         
     }
-
 }
