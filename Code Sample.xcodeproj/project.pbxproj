@@ -12,6 +12,10 @@
 		76DDCE441E52788F00D80D98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DDCE421E52788F00D80D98 /* Main.storyboard */; };
 		76DDCE461E52788F00D80D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76DDCE451E52788F00D80D98 /* Assets.xcassets */; };
 		76DDCE491E52788F00D80D98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DDCE471E52788F00D80D98 /* LaunchScreen.storyboard */; };
+		76DDCE511E52A07F00D80D98 /* AppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DDCE501E52A07F00D80D98 /* AppDataModel.swift */; };
+		76DDCE531E52A79500D80D98 /* SteamSpyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DDCE521E52A79500D80D98 /* SteamSpyService.swift */; };
+		76DDCE551E52C50E00D80D98 /* AppCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DDCE541E52C50E00D80D98 /* AppCellView.swift */; };
+		76DDCE571E52DC4F00D80D98 /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DDCE561E52DC4F00D80D98 /* AppDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		76DDCE451E52788F00D80D98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76DDCE481E52788F00D80D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76DDCE4A1E52788F00D80D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76DDCE501E52A07F00D80D98 /* AppDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataModel.swift; sourceTree = "<group>"; };
+		76DDCE521E52A79500D80D98 /* SteamSpyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SteamSpyService.swift; sourceTree = "<group>"; };
+		76DDCE541E52C50E00D80D98 /* AppCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCellView.swift; sourceTree = "<group>"; };
+		76DDCE561E52DC4F00D80D98 /* AppDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			children = (
 				76DDCE3E1E52788E00D80D98 /* AppDelegate.swift */,
 				76DDCE401E52788E00D80D98 /* ViewController.swift */,
+				76DDCE521E52A79500D80D98 /* SteamSpyService.swift */,
+				76DDCE501E52A07F00D80D98 /* AppDataModel.swift */,
+				76DDCE541E52C50E00D80D98 /* AppCellView.swift */,
+				76DDCE561E52DC4F00D80D98 /* AppDetailView.swift */,
 				76DDCE421E52788F00D80D98 /* Main.storyboard */,
 				76DDCE451E52788F00D80D98 /* Assets.xcassets */,
 				76DDCE471E52788F00D80D98 /* LaunchScreen.storyboard */,
@@ -137,7 +149,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				76DDCE411E52788E00D80D98 /* ViewController.swift in Sources */,
+				76DDCE571E52DC4F00D80D98 /* AppDetailView.swift in Sources */,
+				76DDCE511E52A07F00D80D98 /* AppDataModel.swift in Sources */,
 				76DDCE3F1E52788E00D80D98 /* AppDelegate.swift in Sources */,
+				76DDCE531E52A79500D80D98 /* SteamSpyService.swift in Sources */,
+				76DDCE551E52C50E00D80D98 /* AppCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

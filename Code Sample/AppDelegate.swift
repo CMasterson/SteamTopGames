@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Code Sample
 //
-//  Created by Consie on 13/02/2017.
+//  Created by Conor on 13/02/2017.
 //  Copyright © 2017 Conor. All rights reserved.
 //
 
